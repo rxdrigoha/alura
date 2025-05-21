@@ -21,3 +21,16 @@ function exibirOla() {
     let resultado = (numero1 + numero2 + numero3) / 3;
     alert(`A média de ${numero1}, ${numero2} e ${numero3} é ${resultado}`);
   }
+
+  function exibirMaior() {
+    let numero1= parseInt(prompt('Digite o 1 numero:'))
+    let numero2= parseInt(prompt('Digite o 2 numneero:'))
+    let resultado = Math.max(numero1, numero2);
+    alert(`O maior numero entre ${numero1} e ${numero2} é ${resultado}`);
+  }
+
+  function exibirPropriaDobragem {
+    let numero= parseInt(prompt('Digite 1 numero:'))
+    let resultaado = numero * numero;
+    alert(`O resultado de ${numero} x ${numero} é ${resultado}`);
+  }
