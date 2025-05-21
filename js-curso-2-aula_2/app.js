@@ -12,7 +12,7 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
 
     if (chute == numeroSecreto) {
-        exibirtextoNaTela('h2', 'Voce acertou, parabens.');
+        exibirTextoNaTela('h2', 'Você acertou, parabéns.'); // Corrigido: exibirTextoNaTela
     } else {
         if (chute < numeroSecreto) {
             exibirTextoNaTela('h2', 'O número secreto é maior.');
@@ -21,6 +21,7 @@ function verificarChute() {
         }
     }
 }
+
 function gerarNumeroAleatorio() {
     return parseInt(Math.random() * 1000 + 1);
 }
