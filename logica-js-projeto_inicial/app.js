@@ -1,10 +1,9 @@
+console.log('Arquivo app.js carregado!');
+    
 function exibirOla() {
-    console.log("Olá, mundo!");
+    console.log('Olá, mundo!');
   }
-  
-  exibirOla();
-
-  function exiberNome() {
+  function exibirNome() {
     let nome = prompt('Qual é o seu nome?');
     console.log(`Olá, ${nome}!`);   
   }
