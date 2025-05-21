@@ -29,7 +29,7 @@ function exibirOla() {
     alert(`O maior numero entre ${numero1} e ${numero2} é ${resultado}`);
   }
 
-  function exibirPropriaDobragem {
+  function exibirPropriaDobragem() {
     let numero= parseInt(prompt('Digite 1 numero:'));
     let resultaado = numero * numero;
     alert(`O resultado de ${numero} x ${numero} é ${resultado}`);
