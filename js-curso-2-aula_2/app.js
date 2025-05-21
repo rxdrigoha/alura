@@ -12,7 +12,7 @@ function verificarChute() {
     let chute = document.querySelector('input').value;
 
     if (chute == numeroSecreto) {
-        exibirTextoNaTela('h2', 'Você acertou, parabéns.'); // Corrigido: exibirTextoNaTela
+        exibirTextoNaTela('h2', 'Você acertou, parabéns.'); //Errei: Esqueci de botar o T em maiusculo //
     } else {
         if (chute < numeroSecreto) {
             exibirTextoNaTela('h2', 'O número secreto é maior.');
