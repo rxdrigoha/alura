@@ -11,5 +11,11 @@ function iniciarAlerta() {
 
 function exibirPrompt() {
     let nomedacidade = prompt('Escolha uma cidade do Brasil:')
-    alert('Estive em ${nomedacidade} e lembrei de voce')
+    alert(`Estive em ${nomedacidade} e lembrei de voce`)
 }
+
+function somaNumero() {
+    let firstNumber = parseInt(prompt('Digite o primeiro número:'));
+    let secondNumber = parseInt(prompt('Digite o segundo numero:'));
+    let resultado = firstNumber + secondNumber;
+    alert(`A soma de ${firstNumber} + ${secondNumber} é igual a ${resultado}`); }
