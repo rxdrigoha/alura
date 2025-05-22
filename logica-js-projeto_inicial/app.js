@@ -34,3 +34,10 @@ function exibirOla() {
     let resultaado = numero * numero;
     alert(`O resultado de ${numero} x ${numero} é ${resultado}`);
   }
+
+  function exibirIMC () {
+    let peso = parseFloat (prompt('Digite seu peso aqui em kg:'));
+    let altura = parseFloat (prompt('Digite sua altura aqui em m:'));
+    let resultado = peso / (altura * altura);
+    alert(`Seu IMC é ${resultado.toFixed(2)}`);
+  }
