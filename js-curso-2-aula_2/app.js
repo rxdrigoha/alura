@@ -1,3 +1,5 @@
+let listaDeNumerosSorteados = [];
+let numeroLimite = 1000;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
@@ -11,6 +13,12 @@ function exibirMensagemInicial() {
     exibirTextoNaTela('p', 'Escolha um número entre 1 e 1000');
 }
 
+document.querySelector('input').addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        verificarChute();   
+    }
+});
+
 function verificarChute() {
     let chute = document.querySelector('input').value;
     
@@ -20,7 +28,7 @@ function verificarChute() {
         let mensagemTentativas = `Você acertou o numero secreto  em ${tentativas} ${palavraTentativa}`;
         exibirTextoNaTela('p', mensagemTentativas);
         document.getElementById('reiniciar').removeAttribute('disabled');
-    } else {
+        } else {
         if (chute > numeroSecreto) {
             exibirTextoNaTela('p', 'O número secreto é menor que ' + chute);
         } else {
@@ -32,7 +40,19 @@ function verificarChute() {
 }
 
 function gerarNumeroAleatorio() {
-    return parseInt(Math.random() * 1000 + 1);
+    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
+    let quantidadeDeElementos = listaDeNumerosSorteados.length;
+    if (quantidadeDeElementos == numeroLimite) {
+        listaDeNumerosSorteados = [];
+        alert('Todos numeros ja foram sorteados, tu viciou mesmo em, reiniciando o jogo.');
+    }
+    if (listaDeNumerosSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroAleatorio();
+    } else {
+        listaDeNumerosSorteados.push(numeroEscolhido);
+        console.log(listaDeNumerosSorteados);
+        return numeroEscolhido;
+    }
 }
 
 function limparCampo() {
