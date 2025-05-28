@@ -1,13 +1,21 @@
 function sortear() {
     let quantidade = parseInt(document.getElementById("quantidade").value);
     let de = parseInt(document.getElementById("de").value);
-    let ate = parseInt(document.getElemenyByid("ate").value);
+    let ate = parseInt(document.getElementById("ate").value);
 
+    let listaDeNumerosSorteados = [];
+    let numero;
+    
+    for (let i = 0; i < quantidade; i++) {
+        numero = obterNumeroAleatorio(de, ate);
+        listaDeNumerosSorteados.push(numero); 
+    }
 
-    let numero = obterNumeroAleatorio(de, ate);
-    alert(numero);
+alert(sorteados);
 }
 
 function obterNumeroAleatorio(min, max) {
-
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
 }
