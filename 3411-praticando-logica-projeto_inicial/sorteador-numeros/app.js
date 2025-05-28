@@ -3,7 +3,11 @@ function sortear() {
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElemenyByid("ate").value);
 
-    alert (`Quantiade: ${quantidade}`)
-    alert (`Do numero: ${de}`)
-    alert (`Ate o numero: ${ate}`)
+
+    let numero = obterNumeroAleatorio(de, ate);
+    alert(numero);
+}
+
+function obterNumeroAleatorio(min, max) {
+
 }
