@@ -53,8 +53,6 @@ function reiniciar() {
 }
 
 function alerta(de, ate) {
-    let de = parseInt(document.getElementById("de").value);
-    let ate = parseInt(document.getElementById("ate").value);
     if (de >= ate) {
         alert('Preencha todos os campos de modo certo');
         return false;
