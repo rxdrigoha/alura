@@ -2,6 +2,7 @@ function sortear() {
     let quantidade = parseInt(document.getElementById("quantidade").value);
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElementById("ate").value);
+    alerta();
 
     let listaDeNumerosSorteados = [];
     let numero;
@@ -15,7 +16,7 @@ function sortear() {
     }
 
 let resultado = document.getElementById("resultado");
-resultado.innerHTML = `<label class="texto_paragrafo">Números sorteados: ${listaDeNumerosSorteados}</label>`;   
+resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${listaDeNumerosSorteados}</label>`;   
 alterarStatusBotao();
 }
 
@@ -34,5 +35,23 @@ function alterarStatusBotao() {
     } else {
         botao.classList.remove('container__botao');
         botao.classList.add('container__botao-desabilitado');
+    }
+}
+
+function reiniciar() {
+    document.getElementById('quantidade').value = '';
+    document.getElementById('de').value = '';
+    document.getElementById('ate').value = '';
+    document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>'
+    alterarStatusBotao();
+}
+
+function alerta() {
+    let de = parseInt(document.getElementById("de").value);
+    let ate = parseInt(document.getElementById("ate").value);
+    if (de >= ate) {
+        alert('Preencha todos os campos de modo certo')
+        return;
+        
     }
 }
