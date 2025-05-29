@@ -3,10 +3,10 @@ function sortear() {
     let de = parseInt(document.getElementById("de").value);
     let ate = parseInt(document.getElementById("ate").value);
     if (!alerta(de, ate)) {
-        return; // Interrompe a execução se a validação falhar
+        return; 
     }
     if (!validarQuantidade(quantidade, de, ate)) {
-        return; // Interrompe a execução se a validação falhar
+        return; 
     }
 
     let listaDeNumerosSorteados = [];
@@ -29,7 +29,7 @@ alterarStatusBotao();
 function obterNumeroAleatorio(min, max) {
     const minCeiled = Math.ceil(min);
     const maxFloored = Math.floor(max);
-    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
+    return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 
 function alterarStatusBotao() {
