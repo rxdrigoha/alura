@@ -1,15 +1,20 @@
 function comprar() {
     let tipoIngresso = document.getElementById('tipo-ingresso');
-    let qtdCompra = document.getElementById('qtd');
+    let qtdCompra = parseInt(document.getElementById('qtd').value);
 
-    if(tipoIngresso.value == 'Pista') {
+    if (!qtdCompra || qtdCompra <= 0) {
+        alert('Por favor, insira uma quantidade válida maior que 0.');
+        return;
+    }
+
+    if(tipoIngresso.value == 'pista') {     
         comprarPista(qtdCompra);
     }
-    if(tipoIngresso.value == 'Cadeira inferior') {
-        comprarPista(qtdCompra.value);
+    else if(tipoIngresso.value == 'inferior') {
+        comprarInferior(qtdCompra);
     }
-    if(tipoIngresso.value == 'Cadeira superior') {
-        comprarPista(qtdCompra.value);
+    else if (tipoIngresso.value == 'superior') {
+        comprarSuperior(qtdCompra);
     }
 }
 
@@ -25,8 +30,22 @@ function comprarPista(qtdCompra) {
     }
 }
 function comprarInferior(qtdCompra) {
-    let qtdPista = document.getElementById('qtd-Inferior')
+    let qtdInferior = parseInt(document.getElementById('qtd-inferior').textContent);
+    if (qtdCompra > qtdInferior) {
+        alert('Não há numero suficiente de ingressos disponiveis para efetuar sua compra');
+    } else {
+        qtdInferior = qtdInferior - qtdCompra;
+        document.getElementById('qtd-inferior').textContent = qtdInferior; 
+        alert('Compra feita');       
+    }
 }
 function comprarSuperior(qtdCompra) {
-    let qtdPista = document.getElementById('qtd-superior')
+    let qtdSuperior = parseInt(document.getElementById('qtd-superior').textContent);
+    if (qtdCompra > qtdSuperior) {
+        alert('Não há numero suficiente de ingressos disponiveis para efetuar sua compra');
+    } else {
+        qtdSuperior = qtdSuperior - qtdCompra;
+        document.getElementById('qtd-superior').textContent = qtdInferior; 
+        alert('Compra feita');       
+    }
 }
